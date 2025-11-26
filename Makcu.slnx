@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Makcu/Makcu.vcxproj" Id="91523d72-f35c-4609-8e66-91bef26186ed" />
+</Solution>
