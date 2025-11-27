@@ -15,8 +15,8 @@ namespace recoil
 		extern std::vector<int> y;
 		extern std::vector<float> delay;
 
-		extern bool enable_delay;
-        extern uint32_t delay_ms;
+		extern bool enable_smooth;
+        extern uint32_t segments;
 
 		bool SavePattern(const char* filename);
 		bool LoadPattern(const char* filename);
