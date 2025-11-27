@@ -77,7 +77,6 @@ void AssignPattern(int& x, int& y, int shot_count)
     }
 }
 
-// use movePattern instead
 // make buttons assignable by user via menu
 void recoil::Manager(makcu::Device& device)
 {
@@ -88,6 +87,7 @@ void recoil::Manager(makcu::Device& device)
     {
         int delay = static_cast<int>(menu::toggles::delay);
         int dx, dy;
+        uint32_t segments = menu::toggles::segments;
 
         if (!menu::toggles::enable_recoil)
             continue;
@@ -104,18 +104,18 @@ void recoil::Manager(makcu::Device& device)
             if (menu::toggles::selected_recoil_mode == 1)
             {
                 if (shot_count < recoil::table::x.size())
-                    device.mouseMove(dx, dy);
+                    device.mouseMoveSmooth(dx, dy, segments);
             }
             else if (menu::toggles::selected_recoil_mode == 0)
             {
                 // Only move mouse if within the cont_time duration
                 if (elapsed < menu::toggles::cont_time && menu::toggles::enable_cont_time)
                 {
-                    device.mouseMove(dx, dy);
+                    device.mouseMoveSmooth(dx, dy, segments);
                 }
                 else if (!menu::toggles::enable_cont_time)
                 {
-                    device.mouseMove(dx, dy);
+                    device.mouseMoveSmooth(dx, dy, segments);
                 }
             }
 
