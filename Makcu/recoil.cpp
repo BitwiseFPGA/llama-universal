@@ -77,6 +77,8 @@ void AssignPattern(int& x, int& y, int shot_count)
     }
 }
 
+// use movePattern instead
+// make buttons assignable by user via menu
 void recoil::Manager(makcu::Device& device)
 {
     int shot_count = 0;
